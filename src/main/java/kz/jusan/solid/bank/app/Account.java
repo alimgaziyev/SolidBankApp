@@ -2,6 +2,7 @@ package kz.jusan.solid.bank.app;
 
 public class Account {
     private AccountType accountType;
+    private int bankID = 1;
     private String id;
     private String clientID;
     private double balance;
@@ -9,6 +10,7 @@ public class Account {
 
     public Account(AccountType accountType, String id, String clientID, double balance, boolean withdrawAllowed) {
         this.accountType = accountType;
+        //this.bankID = 1;
         this.id = id;
         this.clientID = clientID;
         this.balance = balance;
@@ -17,7 +19,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return String.format("Account{%s, id = %03d%06d, clientID = %s, balance = %.2f}", accountType.getType(), Integer.parseInt(clientID), Integer.parseInt(id), clientID, balance);
+        return String.format("Account{%s, id = %03d%06d, clientID = %s, balance = %.2f}", accountType.getType(), bankID, Integer.parseInt(id), clientID, balance);
     }
 
     public double getBalance() {
