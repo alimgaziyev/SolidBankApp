@@ -1,4 +1,4 @@
-package kz.jusan.solid.bank.app;
+package kz.jusan.solidbankapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,5 @@
-package kz.jusan.solid.bank.app;
+package kz.jusan.solidbankapp;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class MyCLI implements CLIUI {
@@ -11,7 +10,7 @@ public class MyCLI implements CLIUI {
 
     }
 
-    public AccountType requestAccountType() throws IOException {
+    public AccountType requestAccountType(){
         String accountType = scanner.nextLine();
         AccountType typeOfAccount = new AccountType(accountType);
         return typeOfAccount;

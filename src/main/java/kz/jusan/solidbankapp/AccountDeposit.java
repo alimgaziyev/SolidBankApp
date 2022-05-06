@@ -1,4 +1,4 @@
-package kz.jusan.solid.bank.app;
+package kz.jusan.solidbankapp;
 
 public class AccountDeposit extends Account {
     public AccountDeposit(AccountType accountType, String id, String clientID, double balance, boolean withdrawAllowed) {

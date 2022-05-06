@@ -1,12 +1,9 @@
 package configs;
 
-import kz.jusan.solid.bank.app.*;
+import kz.jusan.solidbankapp.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 @Configuration
@@ -44,16 +41,6 @@ public class MyConfig {
     @Bean
     public MemoryAccountDAO getMemoryAccountDAO() {
         return new MemoryAccountDAO();
-    }
-
-    @Bean
-    public Account getAccount() throws IOException {
-        return new Account(getAccountType(), "id", "clientID", 0, false);
-    }
-
-    @Bean
-    public AccountType getAccountType() throws IOException {
-        return new AccountType("none");
     }
 
 
