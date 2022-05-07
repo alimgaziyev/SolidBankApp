@@ -12,6 +12,10 @@ public class MyCLI implements CLIUI {
         this.scanner = scanner;
     }
 
+    public MyCLI() {
+        this.scanner = new Scanner(System.in);
+    }
+
     public AccountType requestAccountType() throws IllegalArgumentException{
         String accountType = scanner.nextLine();
         return AccountType.valueOf(accountType);

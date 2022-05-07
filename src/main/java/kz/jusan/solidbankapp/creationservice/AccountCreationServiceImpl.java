@@ -17,9 +17,8 @@ public class AccountCreationServiceImpl implements AccountCreationService {
     @Override
     public boolean create(AccountType accountType, long bankID, String clientID, long accountID) {
         boolean isCreated = false;
-        Account account = null;
         try {
-            account = switch (accountType) {
+            Account account = switch (accountType) {
                 case CHECKING -> new CheckingAccount(accountType, Long.toString(accountID), clientID, 0, true);
                 case FIXED -> new FixedAccount(accountType, Long.toString(accountID), clientID, 0, false);
                 case SAVING -> new SavingAccount(accountType, Long.toString(accountID), clientID, 0, true);
