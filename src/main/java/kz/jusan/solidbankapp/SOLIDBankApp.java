@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 
 public class SOLIDBankApp {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String help =
                 "1 - show accounts\n" +
                 "2 - create account\n" +

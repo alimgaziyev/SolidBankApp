@@ -19,7 +19,7 @@ public class AccountBasicCLI {
         this.accountListing = accountListing;
     }
 
-    public boolean createAccountRequest(String clientID) throws IOException {
+    public boolean createAccountRequest(String clientID) {
         boolean isCreated = false;
         AccountType accountType = null;
         while (!isCreated) {
