@@ -6,4 +6,4 @@
 
 2) Enter "java -jar SolidBankApp.jar"
 
-![](picture/Screenshot from 2022-05-07 15-29-11.png)
+![all text](picture/Screenshot from 2022-05-07 15-29-11.png)
