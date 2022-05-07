@@ -6,4 +6,4 @@
 
 2) Enter "java -jar SolidBankApp.jar"
 
-![all text](picture/Screenshot from 2022-05-07 15-29-11.png)
+![all text](https://github.com/alimgaziyev/SolidBankApp/blob/master/picture/Screenshot%20from%202022-05-07%2015-29-11.png)
