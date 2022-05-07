@@ -1,9 +1,13 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.database;
+
+import kz.jusan.solidbankapp.account.Account;
+import kz.jusan.solidbankapp.account.AccountType;
+import kz.jusan.solidbankapp.account.types.AccountWithdraw;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MemoryAccountDAO implements AccountDAO{
+public class MemoryAccountDAO implements AccountDAO {
     private List<Account> accountList;
 
     public MemoryAccountDAO() {
@@ -19,6 +23,16 @@ public class MemoryAccountDAO implements AccountDAO{
     public void createNewAccount(Account account) {
         accountList.add(account);
     }
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void updateAccount(Account account) {

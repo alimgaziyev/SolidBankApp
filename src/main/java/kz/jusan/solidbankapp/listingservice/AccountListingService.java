@@ -1,4 +1,7 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.listingservice;
+
+import kz.jusan.solidbankapp.account.Account;
+import kz.jusan.solidbankapp.account.types.AccountWithdraw;
 
 import java.util.List;
 

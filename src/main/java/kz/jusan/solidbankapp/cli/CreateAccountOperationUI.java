@@ -1,4 +1,6 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.cli;
+
+import kz.jusan.solidbankapp.account.AccountType;
 
 import java.io.IOException;
 

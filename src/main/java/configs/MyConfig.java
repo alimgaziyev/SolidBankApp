@@ -1,6 +1,11 @@
 package configs;
 
-import kz.jusan.solidbankapp.*;
+import kz.jusan.solidbankapp.bank.BankCore;
+import kz.jusan.solidbankapp.cli.AccountBasicCLI;
+import kz.jusan.solidbankapp.cli.MyCLI;
+import kz.jusan.solidbankapp.creationservice.AccountCreationServiceImpl;
+import kz.jusan.solidbankapp.database.MemoryAccountDAO;
+import kz.jusan.solidbankapp.listingservice.AccountListingServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

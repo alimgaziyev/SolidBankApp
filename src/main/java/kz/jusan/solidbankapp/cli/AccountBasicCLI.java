@@ -1,4 +1,9 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.cli;
+
+import kz.jusan.solidbankapp.account.Account;
+import kz.jusan.solidbankapp.account.AccountType;
+import kz.jusan.solidbankapp.listingservice.AccountListingService;
+import kz.jusan.solidbankapp.bank.BankCore;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,23 +19,20 @@ public class AccountBasicCLI {
         this.accountListing = accountListing;
     }
 
-    public void createAccountRequest(String clientID) {
-        System.out.println("Choose account type\n[CHECKING, SAVING, FIXED]");
+    public boolean createAccountRequest(String clientID) throws IOException {
         boolean isCreated = false;
         AccountType accountType = null;
         while (!isCreated) {
             try {
                 accountType = createAccountOperationUI.requestAccountType();
                 isCreated = true;
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                System.out.println("Not correct enter");
             }
         }
-        bankCore.createNewAccount(accountType, clientID);
-        System.out.println("Bank account created");
+        return bankCore.createNewAccount(accountType, clientID);
     }
-    public void getAccounts(String clientID) {
-        List<Account> accounts = accountListing.getClientAccounts(clientID);
-        System.out.println(accounts);
+    public List<Account> getAccounts(String clientID) {
+        return accountListing.getClientAccounts(clientID);
     }
 }

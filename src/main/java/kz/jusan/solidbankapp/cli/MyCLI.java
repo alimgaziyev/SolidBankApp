@@ -1,4 +1,7 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.cli;
+
+import kz.jusan.solidbankapp.account.AccountType;
+import kz.jusan.solidbankapp.cli.CLIUI;
 
 import java.util.Scanner;
 
@@ -7,13 +10,11 @@ public class MyCLI implements CLIUI {
 
     public MyCLI(Scanner scanner) {
         this.scanner = scanner;
-
     }
 
-    public AccountType requestAccountType(){
+    public AccountType requestAccountType() throws IllegalArgumentException{
         String accountType = scanner.nextLine();
-        AccountType typeOfAccount = new AccountType(accountType);
-        return typeOfAccount;
+        return AccountType.valueOf(accountType);
     }
 
     /*

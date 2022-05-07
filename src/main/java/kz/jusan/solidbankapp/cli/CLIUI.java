@@ -1,4 +1,4 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.cli;
 
 public interface CLIUI extends CreateAccountOperationUI {
 }

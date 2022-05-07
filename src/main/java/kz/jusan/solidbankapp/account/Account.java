@@ -1,6 +1,6 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.account;
 
-public class Account {
+public abstract class Account {
     private AccountType accountType;
     private int bankID = 1;
     private String id;
@@ -19,7 +19,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return String.format("Account{%s, id = %03d%06d, clientID = %s, balance = %.2f}", accountType.getType(), bankID, Integer.parseInt(id), clientID, balance);
+        return String.format("Account{%s, id = %03d%06d, clientID = %s, balance = %.2f}", accountType, bankID, Integer.parseInt(id), clientID, balance);
     }
 
     public double getBalance() {

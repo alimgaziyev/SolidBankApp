@@ -1,6 +1,9 @@
-package kz.jusan.solidbankapp;
+package kz.jusan.solidbankapp.account.types;
 
-public class AccountDeposit extends Account {
+import kz.jusan.solidbankapp.account.Account;
+import kz.jusan.solidbankapp.account.AccountType;
+
+public abstract class AccountDeposit extends Account {
     public AccountDeposit(AccountType accountType, String id, String clientID, double balance, boolean withdrawAllowed) {
         super(accountType, id, clientID, balance, withdrawAllowed);
     }
