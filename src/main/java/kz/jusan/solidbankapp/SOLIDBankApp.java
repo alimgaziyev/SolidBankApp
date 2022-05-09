@@ -1,12 +1,9 @@
 package kz.jusan.solidbankapp;
 
-import configs.MyConfig;
 import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.cli.AccountBasicCLI;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.util.List;
 import java.util.Scanner;
@@ -24,7 +21,7 @@ public class SOLIDBankApp {
                 "7 - exit\n";
 
         //ApplicationContext  context = new AnnotationConfigApplicationContext(MyConfig.class);
-        ApplicationContext  context = new ClassPathXmlApplicationContext("myconfig.xml");
+        ApplicationContext  context = new ClassPathXmlApplicationContext("configXml.xml");
         System.out.print("Welcome to CLI Bank service\nPlease enter operation number:\n");
         System.out.print(help);
 
