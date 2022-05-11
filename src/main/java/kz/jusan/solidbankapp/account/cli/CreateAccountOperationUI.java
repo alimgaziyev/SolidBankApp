@@ -1,4 +1,4 @@
-package kz.jusan.solidbankapp.cli;
+package kz.jusan.solidbankapp.account.cli;
 
 import kz.jusan.solidbankapp.account.AccountType;
 

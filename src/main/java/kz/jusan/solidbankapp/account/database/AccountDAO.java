@@ -1,4 +1,4 @@
-package kz.jusan.solidbankapp.database;
+package kz.jusan.solidbankapp.account.database;
 
 import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.AccountType;

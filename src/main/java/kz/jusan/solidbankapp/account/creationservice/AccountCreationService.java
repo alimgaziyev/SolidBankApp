@@ -1,4 +1,4 @@
-package kz.jusan.solidbankapp.creationservice;
+package kz.jusan.solidbankapp.account.creationservice;
 
 import kz.jusan.solidbankapp.account.AccountType;
 

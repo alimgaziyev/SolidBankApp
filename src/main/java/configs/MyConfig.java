@@ -1,11 +1,18 @@
 package configs;
 
 import kz.jusan.solidbankapp.bank.BankCore;
-import kz.jusan.solidbankapp.cli.AccountBasicCLI;
+import kz.jusan.solidbankapp.account.cli.AccountBasicCLI;
 import kz.jusan.solidbankapp.cli.MyCLI;
-import kz.jusan.solidbankapp.creationservice.AccountCreationServiceImpl;
-import kz.jusan.solidbankapp.database.MemoryAccountDAO;
-import kz.jusan.solidbankapp.listingservice.AccountListingServiceImpl;
+import kz.jusan.solidbankapp.account.creationservice.AccountCreationServiceImpl;
+import kz.jusan.solidbankapp.account.database.MemoryAccountDAO;
+import kz.jusan.solidbankapp.account.listingservice.AccountListingServiceImpl;
+import kz.jusan.solidbankapp.transaction.cli.TransactionDepositCLI;
+import kz.jusan.solidbankapp.transaction.cli.TransactionWithdrawCLI;
+import kz.jusan.solidbankapp.transaction.database.MemoryTransactionDAO;
+import kz.jusan.solidbankapp.transaction.deposit.TransactionDeposit;
+import kz.jusan.solidbankapp.transaction.deposit.depositservice.AccountDepositServiceImpl;
+import kz.jusan.solidbankapp.transaction.withdraw.TransactionWithdraw;
+import kz.jusan.solidbankapp.transaction.withdraw.withdrawservice.AccountWithdrawServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -48,5 +55,37 @@ public class MyConfig {
         return new MemoryAccountDAO();
     }
 
+    @Bean
+    public AccountWithdrawServiceImpl getAccountWithdrawService() {
+        return new AccountWithdrawServiceImpl(getMemoryAccountDAO());
+    }
 
+    @Bean
+    public AccountDepositServiceImpl getAccountDepositService() {
+        return new AccountDepositServiceImpl(getMemoryAccountDAO());
+    }
+
+    @Bean
+    public MemoryTransactionDAO getTransactionDAO() {
+        return new MemoryTransactionDAO();
+    }
+    @Bean
+    public TransactionWithdraw getTransactionWithdraw() {
+        return new TransactionWithdraw(getAccountWithdrawService(), getTransactionDAO());
+    }
+
+    @Bean
+    public TransactionDeposit getTransactionDeposit() {
+        return new TransactionDeposit(getAccountDepositService(), getTransactionDAO());
+    }
+
+    @Bean
+    public TransactionWithdrawCLI getTransactionWithdrawCLI() {
+        return new TransactionWithdrawCLI(getTransactionWithdraw(), getMyCLI(), getAccountListingServiceImpl());
+    }
+
+    @Bean
+    public TransactionDepositCLI getTransactionDepositCLI() {
+        return new TransactionDepositCLI(getTransactionDeposit(), getMyCLI(), getAccountListingServiceImpl());
+    }
 }

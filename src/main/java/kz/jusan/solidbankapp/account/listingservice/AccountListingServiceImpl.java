@@ -1,6 +1,6 @@
-package kz.jusan.solidbankapp.listingservice;
+package kz.jusan.solidbankapp.account.listingservice;
 
-import kz.jusan.solidbankapp.database.AccountDAO;
+import kz.jusan.solidbankapp.account.database.AccountDAO;
 import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.types.AccountWithdraw;
 
@@ -18,20 +18,17 @@ public class AccountListingServiceImpl implements AccountListingService {
         return accountDAO.getClientAccounts(clientID);
     }
 
-
-
-
-
-
     @Override
-    public Account getClientAccount() {
-        return null;
+    public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
+        return accountDAO.getClientWithDrawAccount(clientID, accountID);
     }
 
     @Override
-    public AccountWithdraw getClientWithdrawAccount() {
-        return null;
+    public Account getClientAccount(String clientID, String accountID) {
+        return accountDAO.getClientAccount(clientID, accountID);
     }
+
+
 
 
 

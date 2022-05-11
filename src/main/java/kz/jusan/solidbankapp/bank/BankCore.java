@@ -1,7 +1,7 @@
 package kz.jusan.solidbankapp.bank;
 
 import kz.jusan.solidbankapp.account.AccountType;
-import kz.jusan.solidbankapp.creationservice.AccountCreationService;
+import kz.jusan.solidbankapp.account.creationservice.AccountCreationService;
 
 public class BankCore {
     private static long id = 1;

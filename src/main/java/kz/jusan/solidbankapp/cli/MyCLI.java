@@ -12,22 +12,24 @@ public class MyCLI implements CLIUI {
         this.scanner = scanner;
     }
 
-    public MyCLI() {
-        this.scanner = new Scanner(System.in);
-    }
+//    public MyCLI() {
+//        this.scanner = new Scanner(System.in);
+//    }
 
     public AccountType requestAccountType() throws IllegalArgumentException{
         String accountType = scanner.nextLine();
         return AccountType.valueOf(accountType);
     }
 
-    /*
+
     public double requestClientAmount() {
-        return 0;
+        String amount = scanner.nextLine();
+        return Double.parseDouble(amount);
     }
 
-    public String requestClientAccountNumber(Account account) {
-        return String.format("%03d%06d", 1, account.getID());
+    public String requestClientAccountNumber() {
+        String accountNumber = scanner.nextLine();
+        return accountNumber;
     }
-    */
+
 }

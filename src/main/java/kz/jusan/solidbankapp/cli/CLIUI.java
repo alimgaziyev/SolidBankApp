@@ -1,4 +1,7 @@
 package kz.jusan.solidbankapp.cli;
 
-public interface CLIUI extends CreateAccountOperationUI {
+import kz.jusan.solidbankapp.account.cli.CreateAccountOperationUI;
+import kz.jusan.solidbankapp.transaction.cli.WithdrawDepositOperationCLIUI;
+
+public interface CLIUI extends CreateAccountOperationUI, WithdrawDepositOperationCLIUI {
 }

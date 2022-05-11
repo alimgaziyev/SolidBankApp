@@ -2,31 +2,31 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="memoryAccountDAO" class="kz.jusan.solidbankapp.database.MemoryAccountDAO">
+<bean id="memoryAccountDAO" class="kz.jusan.solidbankapp.account.database.MemoryAccountDAO">
 </bean>
-<bean id="accountDAO" class="kz.jusan.solidbankapp.database.AccountDAO" abstract="true">
+<bean id="accountDAO" class="kz.jusan.solidbankapp.account.database.AccountDAO" abstract="true">
 </bean>
-<bean id="accountListingService" class="kz.jusan.solidbankapp.listingservice.AccountListingService" abstract="true">
+<bean id="accountListingService" class="kz.jusan.solidbankapp.account.listingservice.AccountListingService" abstract="true">
 </bean>
-<bean id="accountListingServiceImpl" class="kz.jusan.solidbankapp.listingservice.AccountListingServiceImpl">
+<bean id="accountListingServiceImpl" class="kz.jusan.solidbankapp.account.listingservice.AccountListingServiceImpl">
     <constructor-arg ref="memoryAccountDAO"/>
 </bean>
-<bean id="accountCreationService" class="kz.jusan.solidbankapp.creationservice.AccountCreationService" abstract="true">
+<bean id="accountCreationService" class="kz.jusan.solidbankapp.account.creationservice.AccountCreationService" abstract="true">
 </bean>
-<bean id="accountCreationServiceImpl" class="kz.jusan.solidbankapp.creationservice.AccountCreationServiceImpl">
+<bean id="accountCreationServiceImpl" class="kz.jusan.solidbankapp.account.creationservice.AccountCreationServiceImpl">
     <constructor-arg ref="memoryAccountDAO"/>
 </bean>
 <bean id="bankCore" class="kz.jusan.solidbankapp.bank.BankCore">
     <constructor-arg ref="accountCreationServiceImpl"/>
 </bean>
-<bean id="createAccountOperationUI" class="kz.jusan.solidbankapp.cli.CreateAccountOperationUI" abstract="true"/>
+<bean id="createAccountOperationUI" class="kz.jusan.solidbankapp.account.cli.CreateAccountOperationUI" abstract="true"/>
 <bean id="cLIUI" class="kz.jusan.solidbankapp.cli.CLIUI" abstract="true"/>
 
 
 
 <bean id="myCLI" class="kz.jusan.solidbankapp.cli.MyCLI">
 </bean>
-<bean id="accountBasicCLI" class="kz.jusan.solidbankapp.cli.AccountBasicCLI">
+<bean id="accountBasicCLI" class="kz.jusan.solidbankapp.account.cli.AccountBasicCLI">
     <constructor-arg ref="myCLI"/>
     <constructor-arg ref="bankCore"/>
     <constructor-arg ref="accountListingServiceImpl"/>

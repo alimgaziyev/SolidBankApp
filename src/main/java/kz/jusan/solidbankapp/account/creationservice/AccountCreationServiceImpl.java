@@ -1,6 +1,6 @@
-package kz.jusan.solidbankapp.creationservice;
+package kz.jusan.solidbankapp.account.creationservice;
 
-import kz.jusan.solidbankapp.database.AccountDAO;
+import kz.jusan.solidbankapp.account.database.AccountDAO;
 import kz.jusan.solidbankapp.account.types.CheckingAccount;
 import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.AccountType;

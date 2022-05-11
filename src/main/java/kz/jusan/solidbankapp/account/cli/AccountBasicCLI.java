@@ -1,11 +1,10 @@
-package kz.jusan.solidbankapp.cli;
+package kz.jusan.solidbankapp.account.cli;
 
 import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.AccountType;
-import kz.jusan.solidbankapp.listingservice.AccountListingService;
+import kz.jusan.solidbankapp.account.listingservice.AccountListingService;
 import kz.jusan.solidbankapp.bank.BankCore;
 
-import java.io.IOException;
 import java.util.List;
 
 public class AccountBasicCLI {
@@ -13,7 +12,9 @@ public class AccountBasicCLI {
     private BankCore bankCore;
     private AccountListingService accountListing;
 
-    public AccountBasicCLI(CreateAccountOperationUI createAccountOperationUI, BankCore bankCore, AccountListingService accountListing) {
+    public AccountBasicCLI(CreateAccountOperationUI createAccountOperationUI,
+                           BankCore bankCore,
+                           AccountListingService accountListing) {
         this.createAccountOperationUI = createAccountOperationUI;
         this.bankCore = bankCore;
         this.accountListing = accountListing;
@@ -23,6 +24,7 @@ public class AccountBasicCLI {
         boolean isCreated = false;
         AccountType accountType = null;
         while (!isCreated) {
+            System.out.println("Choose account type\n[CHECKING, SAVING, FIXED]");
             try {
                 accountType = createAccountOperationUI.requestAccountType();
                 isCreated = true;
@@ -30,7 +32,9 @@ public class AccountBasicCLI {
                 System.out.println("Not correct enter");
             }
         }
-        return bankCore.createNewAccount(accountType, clientID);
+        isCreated = bankCore.createNewAccount(accountType, clientID);
+        System.out.println("Bank account created");
+        return isCreated;
     }
     public List<Account> getAccounts(String clientID) {
         return accountListing.getClientAccounts(clientID);
