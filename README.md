@@ -2,9 +2,9 @@
 # Bank app
 ## Instruction
 
-1) Open terminal. 
+    1) Open terminal. 
 
-2) Enter "java -jar SolidBankApp.jar"
+    2) Enter "java -jar SOLIDBankApp.jar"
 
 ## Project Structure
     configs
