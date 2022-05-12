@@ -56,7 +56,7 @@
    
     "4 - withdraw"
    
-    "5 - transfer"
+    "5 - transactions"
    
     "6 - this message"
    

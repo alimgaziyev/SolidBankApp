@@ -20,7 +20,7 @@ public class SOLIDBankApp {
                 "2 - create account\n" +
                 "3 - deposit\n" +
                 "4 - withdraw\n" +
-                "5 - transfer\n" +
+                "5 - transactions\n" +
                 "6 - this message\n" +
                 "7 - exit\n";
 
