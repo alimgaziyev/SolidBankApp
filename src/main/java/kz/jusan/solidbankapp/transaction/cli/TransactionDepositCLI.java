@@ -1,5 +1,6 @@
 package kz.jusan.solidbankapp.transaction.cli;
 
+import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.listingservice.AccountListingService;
 import kz.jusan.solidbankapp.transaction.cli.WithdrawDepositOperationCLIUI;
 import kz.jusan.solidbankapp.transaction.deposit.TransactionDeposit;
@@ -18,17 +19,25 @@ public class TransactionDepositCLI {
     }
 
     public void depositMoney(String clientID) {
-        try {
-            System.out.println("Type account ID");
-            String accountNumber = withdrawDepositOperationCLIUI.requestClientAccountNumber();
-            System.out.println("Type Amount of money");
-            double amount = withdrawDepositOperationCLIUI.requestClientAmount();
-            transactionDeposit.execute(accountListing.getClientAccount(clientID, accountNumber), amount);
-            System.out.println("");
-        } catch (IllegalArgumentException e) {
-            System.out.println("");
-        } catch (NullPointerException e) {
+        System.out.println("Type account ID");
+        String accountNumber = withdrawDepositOperationCLIUI.requestClientAccountNumber();
+        Account account = accountListing.getClientAccount(clientID, accountNumber);
+        if (account == null) {
+            System.out.println("Not found account");
+            return;
+        }
 
+        System.out.println("Type Amount of money");
+        double amount = withdrawDepositOperationCLIUI.requestClientAmount();
+        if (amount <= 0) {
+            System.out.println("illegal amount value");
+            return;
+        }
+
+        if (transactionDeposit.execute(account, amount)) {
+            System.out.printf("%.2f$ transferred to %s account\n", amount, accountNumber);
+        } else {
+            System.out.println("operation failed, please try again");
         }
     }
 }

@@ -3,6 +3,8 @@ package kz.jusan.solidbankapp.cli;
 import kz.jusan.solidbankapp.account.AccountType;
 import kz.jusan.solidbankapp.cli.CLIUI;
 
+import java.util.IllegalFormatException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyCLI implements CLIUI {
@@ -23,8 +25,14 @@ public class MyCLI implements CLIUI {
 
 
     public double requestClientAmount() {
-        String amount = scanner.nextLine();
-        return Double.parseDouble(amount);
+        double amount = 0.0;
+        String amountSTR = scanner.nextLine();
+        try {
+            amount = Double.parseDouble(amountSTR);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        return amount;
     }
 
     public String requestClientAccountNumber() {

@@ -29,4 +29,8 @@ public abstract class Account {
                 clientID,
                 balance);
     }
+
+    public String getAccountId() {
+        return String.format("%03d%06d", bankID, Integer.parseInt(id));
+    }
 }

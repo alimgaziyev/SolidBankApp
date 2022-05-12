@@ -13,8 +13,6 @@ public class AccountDepositServiceImpl implements AccountDepositService {
 
     @Override
     public void deposit(double amount, Account account) {
-        if (amount > 0) {
-            account.setBalance(account.getBalance() + amount);
-        }
+        accountDAO.updateAccount(account, amount);
     }
 }

@@ -11,11 +11,7 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
     }
 
     @Override
-    public void withdraw(double amount, AccountWithdraw accountWithdraw) {
-        if (accountWithdraw != null && accountWithdraw.isWithdrawAllowed()) {
-            if (accountWithdraw.getBalance() >= amount && amount > 0) {
-                accountWithdraw.setBalance(accountWithdraw.getBalance() - amount);
-            }
-        }
+    public void withdraw(double amount, AccountWithdraw accountWithdraw) throws IllegalArgumentException {
+        accountDAO.updateAccount(accountWithdraw, -amount);
     }
 }

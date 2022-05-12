@@ -14,4 +14,9 @@ public class Transaction {
         this.date = date;
         this.isDone = isDone;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%.2f$ | from %s to %s | at %s | isTransferred = %s", amount, fromID, toID, date, isDone);
+    }
 }

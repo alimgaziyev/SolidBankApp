@@ -18,13 +18,20 @@ public class TransactionWithdraw {
         this.transactionDOA = transactionDOA;
     }
 
-    public void execute(AccountWithdraw account, double amount) {
-        accountWithdrawService.withdraw(amount, account);
+    public boolean execute(AccountWithdraw account, double amount) {
+        boolean isTransferred = false;
+        try {
+            accountWithdrawService.withdraw(amount, account);
+            isTransferred = true;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         String date = dtf.format(now);
 
-        transactionDOA.addTransaction(new Transaction("", "", amount, date, true));
+        transactionDOA.addTransaction(new Transaction("out", account.getAccountId(), amount, date, isTransferred));
+        return isTransferred;
     }
 }
