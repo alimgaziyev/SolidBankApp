@@ -12,6 +12,10 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
 
     @Override
     public void withdraw(double amount, AccountWithdraw accountWithdraw) throws IllegalArgumentException {
-        accountDAO.updateAccount(accountWithdraw, -amount);
+        if (amount > 0.0) {
+            accountDAO.updateAccount(accountWithdraw, -amount);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 }

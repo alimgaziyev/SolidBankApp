@@ -13,6 +13,10 @@ public class AccountDepositServiceImpl implements AccountDepositService {
 
     @Override
     public void deposit(double amount, Account account) {
-        accountDAO.updateAccount(account, amount);
+        if (amount > 0.0) {
+            accountDAO.updateAccount(account, amount);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 }
