@@ -4,7 +4,9 @@ import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.listingservice.AccountListingService;
 import kz.jusan.solidbankapp.transaction.cli.WithdrawDepositOperationCLIUI;
 import kz.jusan.solidbankapp.transaction.deposit.TransactionDeposit;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TransactionDepositCLI {
     private TransactionDeposit transactionDeposit;
     private WithdrawDepositOperationCLIUI withdrawDepositOperationCLIUI;

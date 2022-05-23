@@ -5,10 +5,13 @@ import kz.jusan.solidbankapp.transaction.Transaction;
 import kz.jusan.solidbankapp.transaction.database.MemoryTransactionDAO;
 import kz.jusan.solidbankapp.transaction.database.TransactionDOA;
 import kz.jusan.solidbankapp.transaction.withdraw.withdrawservice.AccountWithdrawService;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+@Service
 public class TransactionWithdraw {
     private AccountWithdrawService accountWithdrawService;
     private TransactionDOA transactionDOA;

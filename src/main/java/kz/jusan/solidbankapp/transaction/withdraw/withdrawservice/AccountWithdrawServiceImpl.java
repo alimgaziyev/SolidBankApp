@@ -2,7 +2,9 @@ package kz.jusan.solidbankapp.transaction.withdraw.withdrawservice;
 
 import kz.jusan.solidbankapp.account.database.AccountDAO;
 import kz.jusan.solidbankapp.account.types.AccountWithdraw;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AccountWithdrawServiceImpl implements AccountWithdrawService {
     private AccountDAO accountDAO;
 

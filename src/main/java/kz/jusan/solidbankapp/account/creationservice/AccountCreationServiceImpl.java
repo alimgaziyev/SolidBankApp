@@ -6,7 +6,9 @@ import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.AccountType;
 import kz.jusan.solidbankapp.account.types.FixedAccount;
 import kz.jusan.solidbankapp.account.types.SavingAccount;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AccountCreationServiceImpl implements AccountCreationService {
     private AccountDAO accountDAO;
 
