@@ -5,12 +5,10 @@ import kz.jusan.solidbankapp.transaction.Transaction;
 import kz.jusan.solidbankapp.transaction.database.MemoryTransactionDAO;
 import kz.jusan.solidbankapp.transaction.database.TransactionDOA;
 import kz.jusan.solidbankapp.transaction.deposit.depositservice.AccountDepositService;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-@Service
 public class TransactionDeposit {
     private AccountDepositService accountDepositService;
     private TransactionDOA  transactionDOA;

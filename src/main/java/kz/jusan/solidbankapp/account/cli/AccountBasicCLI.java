@@ -4,11 +4,9 @@ import kz.jusan.solidbankapp.account.Account;
 import kz.jusan.solidbankapp.account.AccountType;
 import kz.jusan.solidbankapp.account.listingservice.AccountListingService;
 import kz.jusan.solidbankapp.bank.BankCore;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
 public class AccountBasicCLI {
     private CreateAccountOperationUI createAccountOperationUI;
     private BankCore bankCore;

@@ -2,9 +2,7 @@ package kz.jusan.solidbankapp.account;
 
 import jdk.jfr.DataAmount;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
-@Component
 @Data
 public abstract class Account {
     private AccountType accountType;
